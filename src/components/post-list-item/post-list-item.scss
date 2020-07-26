@@ -1,0 +1,110 @@
+.app-list-item {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  margin: 10px 0;
+  padding: 12px 15px;
+  font-size: 1.25rem;
+  .date{
+    font-size: 12px;
+  }
+  .btn  {
+    width: 35px;
+    height: 35px;
+    margin: 3px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    :focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  .btn-star {
+    color: #FFD700;
+  }
+  .btn-trash {
+    color: red;
+  }
+  .btn-edit{
+    background: #FFC107;
+    font-size: 12px;
+    border: 1px solid #FFC107;
+    transition: background .5s ease;
+  }
+  .btn-edit:hover{
+    background: transparent;
+  }
+  .info{
+    position: relative;
+  }
+  .action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .app-list-item-label {
+    display: block;
+    line-height: 35px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.5s all;
+  }
+  .app-list-item-icon {
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 16px;
+    color: red;
+    transition: 0.3s all;
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  .app-list-item-icon.like{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  .form-edit{
+    position: absolute;
+    top: -20px;
+    left: -150px;
+    display: block;
+    opacity: 0;
+    transition: all .5s ease;
+    &-wrapper{
+      display: flex;
+      align-items: center;
+    }
+    &-btn{
+      font-size: 13px;
+      border: none;
+      border-radius: 5px;
+    }
+    &-btn:nth-child(2){
+      margin-left: 10px;
+    }
+    &-field{
+      width: 100%;
+      font-size: 14px;
+      resize: none;
+    }
+  }
+  .form-edit.active{
+    position: static;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+  }
+}
+
+.app-list-item.important .app-list-item-label {
+  color: #FFD700;
+}
+
+.app-list-item.important .btn-star {
+    color: #aeaeae;
+}
